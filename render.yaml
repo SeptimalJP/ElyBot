@@ -8,8 +8,11 @@ services:
     autoDeploy: true
     envVars:
       - key: DISCORD_TOKEN    # set in dashboard after create (secret)
+	value: "MTQxMzY3MDM4NTY3Mjc4NTk0MQ.GDm6hQ.06SxNRyPGy6qaoEvkR4m73jVBsHwH-cmqrOqZc"
       - key: GUILD_ID         # set in dashboard
+	value: "1268004369551458325"
       - key: VOICE_CHANNEL_ID # set in dashboard
+	value: "1329569985172865064"
       - key: PORT
         value: "10000"        # Render provides PORT as an env var; binding to any is fine
       - key: TZ
