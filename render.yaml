@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: eq2-attendance
+    env: node
+    plan: starter
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    autoDeploy: true
+    envVars:
+      - key: DISCORD_TOKEN    # set in dashboard after create (secret)
+      - key: GUILD_ID         # set in dashboard
+      - key: VOICE_CHANNEL_ID # set in dashboard
+      - key: PORT
+        value: "10000"        # Render provides PORT as an env var; binding to any is fine
+      - key: TZ
+        value: "Asia/Tokyo"
+      - key: DATA_DIR
+        value: "/data"        # <- where our Disk will mount for the SQLite file
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
